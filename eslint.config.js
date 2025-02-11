@@ -1,28 +1,26 @@
 
-export default {
-    languageOptions: {
-      globals: {
-        window: 'readonly',
-        document: 'readonly',
-      },
-      parserOptions: {
-        ecmaVersion: 2023, 
-        sourceType: 'module',
-      },
+import { defineConfig } from 'eslint-define-config';
+
+export default defineConfig({
+  languageOptions: {
+    globals: {
+      window: 'readonly',
+      document: 'readonly',
     },
-    extends: [
-      'eslint:recommended',
-      'plugin:react/recommended', 
-    ],
-    rules: {
-      'no-unused-vars': 'warn', 
-      'react/prop-types': 'off', 
+    parserOptions: {
+      ecmaVersion: 2023,
+      sourceType: 'module',
     },
-    ignores: [
-      '**/node_modules/**', 
-      '**/*.min.js',
-      'dist/**', 
-      'coverage/**', 
-      'docs/**',
-    ],
-  };
+  },
+  rules: {
+    'no-unused-vars': 'warn', 
+    'react/prop-types': 'off', 
+  },
+  ignores: [
+    '**/node_modules/**',
+    '**/*.min.js',
+    'dist/**',
+    'coverage/**',
+    'docs/**',
+  ],
+});
