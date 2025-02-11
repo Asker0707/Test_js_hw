@@ -1,25 +1,28 @@
-// eslint.config.js
-import { defineConfig } from 'eslint-define-config';
 
-export default defineConfig({
-  languageOptions: {
-    globals: {
-      // Определите глобальные переменные здесь
-      window: 'readonly',
-      document: 'readonly',
-      // другие глобальные переменные, если нужно
+export default {
+    languageOptions: {
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+      },
+      parserOptions: {
+        ecmaVersion: 2023, 
+        sourceType: 'module',
+      },
     },
-    parserOptions: {
-      ecmaVersion: 12,
-      sourceType: 'module',
+    extends: [
+      'eslint:recommended',
+      'plugin:react/recommended', 
+    ],
+    rules: {
+      'no-unused-vars': 'warn', 
+      'react/prop-types': 'off', 
     },
-  },
-  // Другие настройки
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended', // если вы используете React
-  ],
-  rules: {
-    // ваши правила
-  },
-});
+    ignores: [
+      '**/node_modules/**', 
+      '**/*.min.js',
+      'dist/**', 
+      'coverage/**', 
+      'docs/**',
+    ],
+  };
