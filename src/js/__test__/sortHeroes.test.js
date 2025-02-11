@@ -1,4 +1,4 @@
-import { sortHeroes } from './sortHeroes';
+import { sortHeroes } from '../sortHeroes';
 
 test('должен сортировать героев по здоровью в порядке убывания', () => {
     const heroes = [

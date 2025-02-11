@@ -1,4 +1,4 @@
-function healthStatus(character) {
+export function healthStatus(character) {
     if (character.health > 50) {
         return 'healthy';
     } else if (character.health >= 15 && character.health <= 50) {
@@ -7,5 +7,3 @@ function healthStatus(character) {
         return 'critical';
     }
 }
-
-module.exports = healthStatus;
