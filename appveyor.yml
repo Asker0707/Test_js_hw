@@ -17,10 +17,9 @@ cache:
 install:
   - npm ci  # команда установки зависимостей с учетом package-lock.json
 
-build:
-  project: false  # Указывает, что вы не используете проект Visual Studio
-  script:
-    - npm run build  # Ваша команда сборки
+build_script:
+  - npm run build  # Ваша команда сборки
 
 test_script:
-  - npm run lint & npm test  # параллельное выполнение линтинга и тестов
+  - npm run lint
+  - npm test  # параллельное выполнение линтинга и тестов
